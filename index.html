@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Meal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="https://i.ibb.co/gbNrm0sM/837abbaf-efb7-41d0-b6f4-50a9bc78de99.jpg">
+    <span>Smart Meal</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#home">الرئيسية</a></li>
+    <li><a href="#menu">القائمة</a></li>
+    <li><a href="#health">الصحة</a></li>
+    <li><a href="#payment">الدفع</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button onclick="toggleCart()">🛒 <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Smart Meal</h1>
+  <p>اختيارات صحية • توصيل سريع</p>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="section">
+<h2>🍽️ قائمة الطعام</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://i.ibb.co/yF0fngXw/IMG-1631.jpg">
+<h3>دجاج مشوي</h3>
+<p>450 دج</p>
+<button onclick="addToCart('دجاج مشوي',450)">أضف</button>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/27sqWTFn/IMG-1630.jpg">
+<h3>وجبة أرز</h3>
+<p>450 دج</p>
+<button onclick="addToCart('وجبة أرز',450)">أضف</button>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/xScPBgxw/IMG-1629.jpg">
+<h3>باستا</h3>
+<p>450 دج</p>
+<button onclick="addToCart('باستا',450)">أضف</button>
+</div>
+
+</div>
+</section>
+
+<!-- CART -->
+<div id="cartBox" class="cart-box">
+  <h3>🛒 السلة</h3>
+  <div id="cartItems"></div>
+  <p id="total"></p>
+  <button onclick="confirmOrder()">تأكيد الطلب</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
