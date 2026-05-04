@@ -1,0 +1,18 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+export default function Navbar() {
+  const { i18n, t } = useTranslation();
+
+  return (
+    <div className="navbar">
+      <h2>🍽 {t("title")}</h2>
+
+      <div className="lang">
+        <button onClick={() => i18n.changeLanguage("ar")}>AR</button>
+        <button onClick={() => i18n.changeLanguage("fr")}>FR</button>
+        <button onClick={() => i18n.changeLanguage("en")}>EN</button>
+      </div>
+    </div>
+  );
+}
