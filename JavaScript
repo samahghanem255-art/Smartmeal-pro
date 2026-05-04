@@ -1,0 +1,35 @@
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  total += price;
+
+  document.getElementById("cartCount").innerText = cart.length;
+  renderCart();
+}
+
+function toggleCart() {
+  const box = document.getElementById("cartBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function renderCart() {
+  let itemsDiv = document.getElementById("cartItems");
+  itemsDiv.innerHTML = "";
+
+  cart.forEach(item => {
+    itemsDiv.innerHTML += `<p>${item.name} - ${item.price} دج</p>`;
+  });
+
+  document.getElementById("total").innerText = "المجموع: " + total + " دج";
+}
+
+function confirmOrder() {
+  if (cart.length === 0) {
+    alert("السلة فارغة");
+    return;
+  }
+
+  window.open(`https://wa.me/213661234567?text=طلب جديد، المجموع ${total} دج`);
+}
